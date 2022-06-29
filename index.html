@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Chrome</title>
+</head>
+<body>
+    <form id = "login-form" class="hidden">
+    <input required 
+           type="text" 
+           placeholder="what is your name"
+           maxlength="15"/>
+           <!--required 사용자가 input에 필수로 적어야됨 -->
+    <button>Log In</button>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+
+
+
+
+
+
+
+    <script src="JsChrome.JS"></script>
+</body>
+</html>
+
+
+
+<!--form을 submit하면 브라우저는 기본적으로 페이지를 새로고침 하도록 되어있다. << 우리가 원하는 것이 아님!
+JS에 preventDefault() 함수를 추가함으로써 브라우저의 기본 동작을 막을 수 있다!!-->

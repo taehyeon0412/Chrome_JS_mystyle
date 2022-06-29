@@ -1,0 +1,29 @@
+.hidden {
+    display: none;
+}
+/*class명을 hidden으로 바꿔주면 화면에서 사라지게함*/
+
+/*visibility:hidden은 공간은 그대로 두고 보이지만 않는건데 
+display:none은 잡아둔 공간도 사라진다*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 주석 처리 방법*/
