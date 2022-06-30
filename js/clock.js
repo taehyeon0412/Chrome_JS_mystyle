@@ -6,8 +6,9 @@ function getClock(){
     const Hours = String(date.getHours()).padStart(2,"0");
     const Minutes = String(date.getMinutes()).padStart(2,"0");
     const Seconds = String(date.getSeconds()).padStart(2,"0");
-    clock.innerText = Hours<13 ? `오전 ${Hours-12}:${Minutes}:${Seconds}` : `오후 ${Hours-12}:${Minutes}:${Seconds}`
+    clock.innerText = Hours<13 ? `오전 ${Hours}:${Minutes}:${Seconds}` : `오후 ${Hours-12}:${Minutes}:${Seconds}`
     // 삼항연산자를 써서 date.getHours()<13 이면 오전 그렇지 않으면 오후로 조건을 검
+    //오후에는 24시간 기준이니 hours에 -12를 해준다 
 }
 
 getClock(); 
