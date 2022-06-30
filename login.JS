@@ -1,6 +1,7 @@
 const loginForm = document.querySelector(`#login-form`);
 const loginInput = document.querySelector(`#login-form input`);
 const greeting = document.querySelector(`#greeting`);
+const logoutBtn = document.querySelector(`#logout-btn`);
 
 const HIDDEN_CLASS_NAME = `hidden`;
 const LOCAL_USERNAME_KEY = `username`;
@@ -11,6 +12,7 @@ function onLoginSubmit(event){
     loginForm.classList.add(HIDDEN_CLASS_NAME);
     //loginForm에  hidden클래스를 더해줘서 화면에서 숨김
     const loginInputValue = loginInput.value;
+    //loginInput의 값을 변수에 저장
     console.log(loginInputValue);
     localStorage.setItem(LOCAL_USERNAME_KEY,loginInputValue);
     //localStorage에 key=username , value=loginInputValue을 저장함
@@ -24,6 +26,8 @@ function paintGreetings(username){
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
     //중복되는 구간을 함수로 만들어 코드수를 줄임
+    logoutBtn.classList.remove(HIDDEN_CLASS_NAME);
+    //로그아웃 버튼이 생겨남
 }
 
 
@@ -42,6 +46,14 @@ if(savedUsername === null){
     //greeting이 나타나면서 savedUsername값을 innerText로 보여준다
 }
 
+function removeStorage(){
+    localStorage.removeItem("username");
+    window.location.reload();
+    //localStorage에 있는 username을 삭제하고 새로고침한다.
+}
+
+logoutBtn.addEventListener("click",removeStorage);
+//로그아웃버튼을 누르면 removeStorage 함수가 실행된다.
 
 
 //1.localStorage에 저장된 키 값이 있는지 확인한다.
