@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>My Chrome</title>
 </head>
 <body>
-    <form id = "login-form" class="hidden">
-    <input required 
-           type="text" 
-           placeholder="이름을 입력하세요"
-           maxlength="15"/>
-           <!--required 사용자가 input에 필수로 적어야됨 -->
-    <button>로그인</button>
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-        <button id="logout-btn" class="hidden">로그아웃</button>
+    
+    <h2 id="clock">00:00:00</h2>
 
-    <script src="login.JS"></script>
+    <form id = "login-form" class="hidden">
+        <input required 
+               type="text" 
+               placeholder="이름을 입력하세요"
+               maxlength="15"/>
+               <!--required 사용자가 input에 필수로 적어야됨 -->
+        <button>로그인</button>
+        </form>
+
+    <h1 id="greeting" class="hidden"></h1>
+
+    <button id="logout-btn" class="hidden">로그아웃</button>
+
+    
+
+
+    <script src="js/login.JS"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
 

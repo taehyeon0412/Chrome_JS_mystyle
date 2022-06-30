@@ -23,7 +23,7 @@ function onLoginSubmit(event){
 }
 
 function paintGreetings(username){
-    greeting.innerText = `Hello ${username}`;
+    greeting.innerText = `Hello!! ${username}`;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
     //중복되는 구간을 함수로 만들어 코드수를 줄임
     logoutBtn.classList.remove(HIDDEN_CLASS_NAME);
