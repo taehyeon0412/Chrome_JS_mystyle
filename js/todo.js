@@ -3,6 +3,26 @@ const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("#todo-list");
 
 
+function createToDo(newTodo){
+    const li = document.createElement("li");
+    //html 요소에 li를 추가함
+    const span = document.createElement("span");
+    //html 요소에 li를 추가함
+    li.appendChild(span);
+    //li(부모노드)에 span(자식노드)를 추가함
+    span.innerText = newTodo;
+    todoList.appendChild(li);
+    //ul(부모노드)에 li(자식노드)를 추가함 리스트가 생김
+}
+
+/*createToDo함수는 ToDoSubmit함수가 실행될때마다
+html 요소에 li와 span을 추가하고 span에 사용자가 input에 적은
+text값을 기록한다.
+ul에 자식노드로 li를 생성하고 리스트가 생기게 한다.
+
+*/
+
+
 function ToDoSubmit(submitEvent){
     submitEvent.preventDefault();
     //submit할때 페이지 새로고침 막아줌
@@ -10,12 +30,13 @@ function ToDoSubmit(submitEvent){
     //todoInput의 값이 없어지기전에 변수에 저장해준다
     todoInput.value = "";
     //submit할때 text상자안의 값이 비게한다
-    
+    createToDo(newTodo);
+    //const newTodo값을 createToDo함수에 넣고 실행한다.  
 }
 
 
 todoForm.addEventListener("submit",ToDoSubmit);
-
+//todoForm을 submit할때 ToDoSubmit함수가 실행
 
 
 
@@ -43,6 +64,8 @@ todoForm.addEventListener("submit",ToDoSubmit);
     const newTodo = toDoInput.value;
     toDoInput.value = "";
     }
+
+
 
 
  todo-list점검
