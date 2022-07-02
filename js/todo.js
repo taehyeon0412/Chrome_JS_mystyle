@@ -2,15 +2,30 @@ const todoForm = document.querySelector("#todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("#todo-list");
 
+function deleteToDo(deleteToDo){
+  const li = deleteToDo.target.parentElement;
+  li.remove();
+}
+/*x버튼을 눌렀을때 작동하는 함수
+어떤 버튼을 클릭했는지 모르니까 target.parentElement(클릭된 element의 부모)
+로 위치를 알아내서 지워주는 코드를 쓴다.
+*/
+
 
 function createToDo(newTodo){
     const li = document.createElement("li");
     //html 요소에 li를 추가함
     const span = document.createElement("span");
     //html 요소에 li를 추가함
-    li.appendChild(span);
-    //li(부모노드)에 span(자식노드)를 추가함
+    const button = document.createElement("button");
+    //html 요소에 button을 추가함
     span.innerText = newTodo;
+    button.innerText = "❌"
+    button.addEventListener("click",deleteToDo);
+    li.appendChild(span);
+    li.appendChild(button);
+    //li(부모노드)에 span(자식노드)를 추가함
+    ////li(부모노드)에 button(자식노드)를 추가함
     todoList.appendChild(li);
     //ul(부모노드)에 li(자식노드)를 추가함 리스트가 생김
 }
@@ -19,7 +34,6 @@ function createToDo(newTodo){
 html 요소에 li와 span을 추가하고 span에 사용자가 input에 적은
 text값을 기록한다.
 ul에 자식노드로 li를 생성하고 리스트가 생기게 한다.
-
 */
 
 
