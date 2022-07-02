@@ -2,6 +2,14 @@ const todoForm = document.querySelector("#todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("#todo-list");
 
+const toDos = []
+
+function saveToDos(){
+  localStorage.setItem("toDos",toDos);
+  //localStorage에 key:toDos value:toDos 을 저장하는함수
+}
+
+
 function deleteToDo(deleteToDo){
   const li = deleteToDo.target.parentElement;
   li.remove();
@@ -44,8 +52,13 @@ function ToDoSubmit(submitEvent){
     //todoInput의 값이 없어지기전에 변수에 저장해준다
     todoInput.value = "";
     //submit할때 text상자안의 값이 비게한다
+    toDos.push(newTodo);
+    //newTodo를 toDos라는 배열에 집어넣는다 
+    /*배열에 넣는 이유 : 로컬스토리지에 저장하여 새로고침해도
+      todo-list의 값이 없어지지 않게 하기 위해서*/
     createToDo(newTodo);
     //const newTodo값을 createToDo함수에 넣고 실행한다.  
+    saveToDos();
 }
 
 
