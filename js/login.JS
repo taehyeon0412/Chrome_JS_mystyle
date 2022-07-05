@@ -47,8 +47,17 @@ if(savedUsername === null){
 }
 
 function removeStorage(){
-    localStorage.removeItem("username");
-    window.location.reload();
+    localStorage.removeItem(LOCAL_USERNAME_KEY);
+    //LOCAL_USERNAME_KEY가 삭제됨
+    loginForm.classList.remove(HIDDEN_CLASS_NAME)
+    //로그인폼이 나타남
+    logoutBtn.classList.add(HIDDEN_CLASS_NAME);
+    //로그아웃버튼 사라짐
+    greeting.classList.add(HIDDEN_CLASS_NAME);
+    //greeting(h1) 문장 사라짐
+    loginInput.value = "";
+    //로그아웃시 loginInput text상자값을 비게한다
+    //window.location.reload();
     //localStorage에 있는 username을 삭제하고 새로고침한다.
 }
 
