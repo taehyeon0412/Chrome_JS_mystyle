@@ -17,13 +17,31 @@ function saveToDos_ft(){
 }
 
 
-function deleteToDo(deleteToDo){
+function deleteToDo(deleteToDo){//x버튼을 눌렀을때 작동하는 함수
   const li = deleteToDo.target.parentElement; 
+  /*어떤 버튼을 클릭했는지 모르니까 target.parentElement(클릭된 element의 부모)
+    로 위치를 알아내서 지워주는 코드를 쓴다.*/
   li.remove();
+  toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+  /*toDo.id가 li.id(삭제하고싶은 li.id)와 
+  일치하지 않는값을 return받는다
+  parseInt(li.id)를 하는이유 => toDo.id는 숫자값인데 li.id는 string값이다
+  변수타입이 맞지 않으면 작동을 안하기 때문에 변수타입을 숫자로 맞춰준다
+  */
+  saveToDos_ft();
+  //saveToDos_ft를 사용하여 변경된 toDos값을 다시 저장해준다
 }
-/*x버튼을 눌렀을때 작동하는 함수
-어떤 버튼을 클릭했는지 모르니까 target.parentElement(클릭된 element의 부모)
-로 위치를 알아내서 지워주는 코드를 쓴다.
+
+/* Filter 함수는 반드시 true만 리턴한다
+Filter는 for문과 마찬가지로 반복적인 기능을 수행할 때 사용함
+
+ex) const arr = [1,2,3,4,5,6,10,11,12];
+    function filterMan(item){return item < 9};
+    arr.filter(filterMan);
+    ==> [1, 2, 3, 4, 5, 6]
+  간략하게 화살표 함수를 쓰면
+  arr.filter(item => item < 9);
+  화살표함수에는 return을 쓰지않아도 자동으로 된다
 */
 
 
@@ -123,7 +141,6 @@ arr.forEach(element => console.log(element));
 복잡한 코드 필요없이 forEach에 createToDo함수를 넣어주면 
 forEach기능때문에 새로고침해도 localStorage에 있는 값을 다시 불러올수 있다
 */
-
 
 
 
