@@ -2,16 +2,23 @@ const todoForm = document.querySelector("#todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("#todo-list");
 
-const toDos = []
+let toDos = [];
+/*let을 하는 이유 : const로 고정을 해버리면 새로고침시 
+이전에 있던 값들에 새로운값이 더해지면 추가되는것이 아닌 덮어씌워지기때문에 
+let으로 업데이트를 가능하게 해놓는다*/
 
-function saveToDos(){
-  localStorage.setItem("toDos",toDos);
+const TODOS_KEY = "toDos"
+
+function saveToDos_ft(){
+  localStorage.setItem(TODOS_KEY,JSON.stringify(toDos));
   //localStorage에 key:toDos value:toDos 을 저장하는함수
+  //JSON.stringify() = 오브젝트,배열등등 모든 JS코드를 string으로 바꿔준다.
+  //JSON.parse() = string을 오브젝트,배열등등으로 바꿔준다.
 }
 
 
 function deleteToDo(deleteToDo){
-  const li = deleteToDo.target.parentElement;
+  const li = deleteToDo.target.parentElement; 
   li.remove();
 }
 /*x버튼을 눌렀을때 작동하는 함수
@@ -23,12 +30,21 @@ function deleteToDo(deleteToDo){
 function createToDo(newTodo){
     const li = document.createElement("li");
     //html 요소에 li를 추가함
+    li.id = newTodo.id;
+    /*li의 id에 newTodoOBJ의 id를 넣어준다
+    삭제시 deleteToDo함수가 돌아가고 deleteToDo.target.parentElement;로
+    삭제하고싶은 li의 id를 알수있게됨
+    */
     const span = document.createElement("span");
     //html 요소에 li를 추가함
+    span.innerText = newTodo.text;
+    /* newTodo.text => newTodoOBJ의 값이 text,id 2개의 값이 있기때문에
+    text값만 따로 빼와서 innerText에 넣어준다
+    */
     const button = document.createElement("button");
     //html 요소에 button을 추가함
-    span.innerText = newTodo;
-    button.innerText = "❌"
+    
+    button.innerText = "❌";
     button.addEventListener("click",deleteToDo);
     //버튼을 눌렀을때 deleteToDo함수가 실행되고 li가 삭제됨
     li.appendChild(span);
@@ -53,21 +69,60 @@ function ToDoSubmit(submitEvent){
     //todoInput의 값이 없어지기전에 변수에 저장해준다
     todoInput.value = "";
     //submit할때 text상자안의 값이 비게한다
-    toDos.push(newTodo);
-    //newTodo를 toDos라는 배열에 집어넣는다 
-    /*배열에 넣는 이유 : 로컬스토리지에 저장하여 새로고침해도
-      todo-list의 값이 없어지지 않게 하기 위해서*/
-    createToDo(newTodo);
-    //const newTodo값을 createToDo함수에 넣고 실행한다.  
-    saveToDos();
+    const newTodoOBJ = {
+      text: newTodo,
+      id: Date.now(), //랜덤id
+    };
+    /*같은 값이 localStorage에 저장되어 있으면 어떤것을 지워야될지 모르기때문에
+    각각의 값을 오브젝트로 만들어 localStorage에 저장을한다*/
+    toDos.push(newTodoOBJ);
+    /*newTodoOBJ를 toDos라는 배열에 집어넣는다 
+     배열에 넣는 이유 : 로컬스토리지에 저장하여 새로고침해도
+     todo-list의 값이 없어지지 않게 하기 위해서*/
+    createToDo(newTodoOBJ);
+    //const newTodoOBJ값을 createToDo함수에 넣고 실행한다.  
+    saveToDos_ft();
 }
 
 
 todoForm.addEventListener("submit",ToDoSubmit);
 //todoForm을 submit할때 ToDoSubmit함수가 실행
 
+const savedToDos = localStorage.getItem(TODOS_KEY);
+//localStorage에 있는 키값을 가져온다
+
+/*아무것도 입력하지 않았을때는 TODOS_KEY의 값이 null이기 때문에 
+그것을 if문으로 해결해준다*/
 
 
+if(savedToDos !== null){
+  //savedToDos(변수)의 값이 null이 아닐때
+
+  const parsedToDos = JSON.parse(savedToDos);
+  //JSON.parse() = string을 오브젝트,배열등등으로 바꿔준다.
+  toDos = parsedToDos;
+  /*parsedToDos값을 toDos배열에 넣어주면 새로고침시
+    빈값으로 시작하지않고 이전에 데이터를 가지고 시작한다*/
+  parsedToDos.forEach(createToDo);
+  /*forEach는 for문과 마찬가지로 반복적인 기능을 수행할 때 사용함
+  배열에 있는 각각의 아이템 실행 ex)localStorage에 저장된값이 8개면 8번실행
+  */
+
+ /* 기본적인 사용법
+ const arr = [0,1,2,3,4,5,6,7,8,9,10];
+
+arr.forEach(function(element){
+    console.log(element);   // 0 1 2 3 4 5 6 7 8 9 10
+});
+// 혹은 arrow 함수 가능
+arr.forEach(element => console.log(element));
+*/
+}
+/* parsedToDos.forEach(createToDo);
+=> 위에서 사용자가 입력한 것을 화면에 나타내주는 함수를 만들었기때문에
+복잡한 코드 필요없이 forEach에 createToDo함수를 넣어주면 
+forEach기능때문에 새로고침해도 localStorage에 있는 값을 다시 불러올수 있다
+*/
 
 
 
