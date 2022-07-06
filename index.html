@@ -8,38 +8,63 @@
     <title>My Chrome</title>
 </head>
 <body>
+    <div class="bg">
+        <div class="content">
+
+        <div class="up-content"></div>
+        <!--상단 컨텐츠-->
+
+        <div class="mid-content">
+
+            <div class="clock">
+                <h2 id="clock_text">00:00:00</h2>
+            </div>
+
+            <div class="login">
+                <form id = "login-form" class="hidden">
+                    <input required 
+                    type="text" 
+                    placeholder="이름을 입력하세요"
+                    maxlength="15"/>
+                    <!--required 사용자가 input에 필수로 적어야됨 -->
+                    <button>로그인</button>
+                </form>
+            </div>
+
+            <div class="greeting">
+                <h1 id="greeting" class="hidden"></h1>
+            </div>
+
+            <button id="logout-btn" class="hidden">로그아웃</button>
+
+        </div>
+        <!--중단 컨텐츠-->
+
     
-    <h2 id="clock">00:00:00</h2>
+        <div class="bot-content">
+            <div class="todo-list">
+                <form id="todo-form">
+                    <input required 
+                        type="text" placeholder="오늘 할일을 적어주세요."/>
+                </form>
 
-    <form id = "login-form" class="hidden">
-        <input required 
-               type="text" 
-               placeholder="이름을 입력하세요"
-               maxlength="15"/>
-               <!--required 사용자가 input에 필수로 적어야됨 -->
-        <button>로그인</button>
-        </form>
+                <ul id="todo-list"></ul>
+            </div>
 
-    <h1 id="greeting" class="hidden"></h1>
+            <div id ="quote">
+                <span></span>
+                <span></span>
+            </div>
 
-    <button id="logout-btn" class="hidden">로그아웃</button>
-
-    <form id="todo-form">
-        <input required 
-               type="text" placeholder="오늘 할일을 적어주세요."/>
-    </form>
-
-    <ul id="todo-list"></ul>
-
-    <div id ="quote">
-        <span></span>
-        <span></span>
+            <div id="weather">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    
+        
     </div>
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
-
+</div>
 
     <script src="js/login.JS"></script>
     <script src="js/clock.js"></script>

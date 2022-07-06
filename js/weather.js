@@ -26,7 +26,7 @@ function onGeoOK(position){
 }
 
 function onGeoError(){
-    alert("위치정보를 찾을 수 없습니다.")
+    console.log("위치정보를 찾을 수 없습니다.")
 }
 
 

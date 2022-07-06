@@ -6,17 +6,57 @@
 /*visibility:hidden은 공간은 그대로 두고 보이지만 않는건데 
 display:none은 잡아둔 공간도 사라진다*/
 
+body{
+    margin:0;
+}
 
+.bg { 
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+}
 
+.bgImage{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none; /*이미지 드래그 방지*/
+/*배경화면 설정*/
+}
 
+.content{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "uc uc uc uc"
+    ". mc mc ."
+    ". mc mc ."
+    ". bc bc .";
+}
 
+.up-content{
+    grid-area: uc;
+}
 
+.mid-content{
+    grid-area: mc;
+}
 
+.bot-content{
+    grid-area: bc;
+}
 
-
-
-
-
+/*레이아웃 나누기*/
 
 
 
