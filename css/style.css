@@ -1,3 +1,6 @@
+@import url("clock.css");
+@import url("login.css");
+
 .hidden {
     display: none;
 }
@@ -8,6 +11,7 @@ display:none은 잡아둔 공간도 사라진다*/
 
 body{
     margin:0;
+
 }
 
 .bg { 
@@ -35,7 +39,7 @@ body{
     z-index: 2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas: 
     "uc uc uc uc"
@@ -50,6 +54,7 @@ body{
 
 .mid-content{
     grid-area: mc;
+    
 }
 
 .bot-content{

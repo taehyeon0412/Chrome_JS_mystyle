@@ -20,28 +20,22 @@
                 <h2 id="clock_text">00:00:00</h2>
             </div>
 
-            <div class="login">
-                <form id = "login-form" class="hidden">
+            <div class="login hidden">
+                <form id = "login-form">
                     <input required 
                     type="text" 
                     placeholder="이름을 입력하세요"
-                    maxlength="15"/>
+                    maxlength="10"/>
                     <!--required 사용자가 input에 필수로 적어야됨 -->
                     <button>로그인</button>
                 </form>
             </div>
 
             <div class="greeting">
-                <h1 id="greeting" class="hidden"></h1>
+                <span id="greeting" class="hidden"></span>
+                <button id="logout-btn" class="hidden">로그아웃</button>
             </div>
 
-            <button id="logout-btn" class="hidden">로그아웃</button>
-
-        </div>
-        <!--중단 컨텐츠-->
-
-    
-        <div class="bot-content">
             <div class="todo-list">
                 <form id="todo-form">
                     <input required 
@@ -50,6 +44,13 @@
 
                 <ul id="todo-list"></ul>
             </div>
+
+        </div>
+        <!--중단 컨텐츠-->
+
+    
+        <div class="bot-content">
+            
 
             <div id ="quote">
                 <span></span>
