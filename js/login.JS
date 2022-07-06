@@ -46,7 +46,8 @@ if(savedUsername === null){
     //greeting이 나타나면서 savedUsername값을 innerText로 보여준다
 }
 
-function removeStorage(){
+function removeStorage(event){
+    event.preventDefault(); 
     localStorage.removeItem(LOCAL_USERNAME_KEY);
     //LOCAL_USERNAME_KEY가 삭제됨
     loginForm.classList.remove(HIDDEN_CLASS_NAME)
