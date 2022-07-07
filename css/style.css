@@ -1,5 +1,6 @@
 @import url("clock.css");
 @import url("login.css");
+@import url("todo.css");
 
 .hidden {
     display: none;
@@ -44,8 +45,8 @@ body{
     grid-template-areas: 
     "uc uc uc uc"
     ". mc mc ."
-    ". mc mc ."
-    ". bc bc .";
+    ". mc mc sc"
+    ". bc bc sc";
 }
 
 .up-content{
@@ -55,6 +56,10 @@ body{
 .mid-content{
     grid-area: mc;
     
+}
+
+.side-content{
+    grid-area: sc;
 }
 
 .bot-content{

@@ -62,7 +62,7 @@ function createToDo(newTodo){
     const button = document.createElement("button");
     //html 요소에 button을 추가함
     
-    button.innerText = "❌";
+    
     button.addEventListener("click",deleteToDo);
     //버튼을 눌렀을때 deleteToDo함수가 실행되고 li가 삭제됨
     li.appendChild(span);
@@ -71,7 +71,7 @@ function createToDo(newTodo){
     ////li(부모노드)에 button(자식노드)를 추가함
     todoList.appendChild(li);
     //ul(부모노드)에 li(자식노드)를 추가함 리스트가 생김
-}
+  }
 
 /*createToDo함수는 ToDoSubmit함수가 실행될때마다
 html 요소에 li와 span을 추가하고 span에 사용자가 input에 적은
