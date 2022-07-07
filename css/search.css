@@ -1,0 +1,36 @@
+/*search, search-form, search-form input 
+560 45*/
+
+
+.search{
+    display: flex;
+    justify-content: center;
+    height:80px;
+}
+
+.search-form{
+    display: flex;
+    justify-content: center;
+    width:600px;
+    height:45px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.search-form input{
+    width:520px;
+    height:45px;
+    margin:none;
+    border:none;
+    padding:0px;
+    outline: none;
+    font-size: 15px;
+}
+
+.fa-solid{
+    position:relative;
+    top:13px;
+    right:12px;
+    color:rgb(90, 90, 90);
+
+}
