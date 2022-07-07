@@ -47,7 +47,6 @@ if(savedUsername === null){
 }
 
 function removeStorage(event){
-    event.preventDefault(); 
     localStorage.removeItem(LOCAL_USERNAME_KEY);
     //LOCAL_USERNAME_KEY가 삭제됨
     loginForm.classList.remove(HIDDEN_CLASS_NAME)
@@ -58,6 +57,7 @@ function removeStorage(event){
     //greeting(h1) 문장 사라짐
     loginInput.value = "";
     //로그아웃시 loginInput text상자값을 비게한다
+    event.preventDefault();
     //window.location.reload();
     //localStorage에 있는 username을 삭제하고 새로고침한다.
 }

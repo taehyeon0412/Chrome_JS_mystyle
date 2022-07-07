@@ -1,6 +1,7 @@
 @import url("clock.css");
 @import url("login.css");
 @import url("todo.css");
+@import url("qoutes.css");
 
 .hidden {
     display: none;
