@@ -2,6 +2,7 @@
 @import url("login.css");
 @import url("todo.css");
 @import url("qoutes.css");
+@import url("weather.css");
 
 .hidden {
     display: none;
@@ -44,7 +45,7 @@ body{
     grid-template-rows: 100px 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas: 
-    "uc uc uc uc"
+    ". uc uc ."
     ". mc mc ."
     ". mc mc sc"
     ". bc bc sc";

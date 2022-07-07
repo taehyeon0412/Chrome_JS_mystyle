@@ -1,0 +1,15 @@
+#weather{
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    width: 1920px;
+    height: 230px;
+    z-index: 3;
+}
+
+#weather iframe{
+    height: 220px;
+    width: 1000px;
+    border:none;
+    background-color: rgb(204, 199, 199, 0.4);
+}

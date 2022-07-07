@@ -1,13 +1,11 @@
+/*
 const API_KEY = "84514662d9c10ba0c4c416fab80c99d5";
 
 function onGeoOK(position){
     const lat = position.coords.latitude; //위도
     const lon = position.coords.longitude; //경도
     /*onGeoOK함수에 console.log(position)값을 넣으면 많은 정보를 주는데 
-    그중 위도와 경도를 받아온다*/
-    console.log(position);
-    console.log(`너는 ${lat},${lon}에 살고있구나`);
-
+    그중 위도와 경도를 받아온다
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     //API주소 넣기
     fetch(url)
@@ -37,3 +35,5 @@ function onGeoError(){
 navigator.geolocation.getCurrentPosition(onGeoOK,onGeoError);
 //위치좌표주는것
 //성공,실패 2가지 경우를 받는다
+
+*/

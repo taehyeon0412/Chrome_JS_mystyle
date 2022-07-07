@@ -32,6 +32,11 @@
     transition-duration: 0.3s;
 }
 
+#login-form button:hover{
+    background-color: #ccc;
+}
+
+
 .greeting{
     margin-top: 0px;
     margin-bottom: 25px;
@@ -45,7 +50,7 @@
     margin-right: 40px;
     font-size: 45px;
     font-weight: 550;
-    color:white;
+    color:azure;
 }
 
 #logout-btn{
@@ -58,4 +63,8 @@
     border-color: #ccc;
     box-shadow: 3px 3px 3px black;
     transition-duration: 0.3s;
+}
+
+#logout-btn:hover{
+    background-color: #ccc;
 }
