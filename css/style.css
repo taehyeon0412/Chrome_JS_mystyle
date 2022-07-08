@@ -5,6 +5,17 @@
 @import url("weather.css");
 @import url("search.css");
 
+
+
+html{
+    font-size: 62.5%; /*10px*/
+}
+
+/*1rem = 10px*/
+
+
+
+
 .hidden {
     display: none;
 }
@@ -44,7 +55,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap:1rem;
     grid-template-areas: 
     ". uc uc ."
     ". mc mc ."

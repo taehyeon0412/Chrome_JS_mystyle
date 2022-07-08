@@ -1,0 +1,40 @@
+@media (max-width:1770px){
+    html{
+        font-size:9px;
+    }
+}
+
+@media (max-width:1550px){
+    .todo-list{
+        right:-10%;
+    }
+
+}
+
+
+@media (max-width:1490px){
+    html{
+        font-size:8px;
+    }
+
+}
+
+@media (max-width:1310px){
+    .todo-list{
+        right:0;
+    }
+}
+
+
+@media (max-width:1000px){
+    html{
+        font-size:7px;
+    }  
+}
+
+@media (max-width:900px){
+    #weather iframe{
+        width:240px;
+    }
+    
+}

@@ -1,8 +1,15 @@
+/*1rem = 10px*/
+
+.clock{
+    width: 100%;
+}
+
 #clock_text{
-    font-size: 80px;
+    font-size: 8rem;
     opacity:0.9;
     color:azure;
     text-align: center;
     margin-top: 110px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
+
