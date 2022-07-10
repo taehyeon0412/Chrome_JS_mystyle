@@ -1,3 +1,39 @@
+.content{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr;
+    grid-gap:1rem;
+    grid-template-areas: 
+    ". uc uc ."
+    ". mc mc ."
+    ". mc mc sc"
+    ". bc bc sc";
+}
+
+.up-content{
+    grid-area: uc;
+}
+
+.mid-content{
+    grid-area: mc;
+    
+}
+
+.side-content{
+    grid-area: sc;
+}
+
+.bot-content{
+    grid-area: bc;
+}
+
+/*레이아웃 나누기*/
+
+
 @media (max-width:1770px){
     html{
         font-size:9px;
@@ -32,21 +68,4 @@
     }  
 }
 
-@media (max-width:900px){
-    html{
-        font-size:8px;
-    }  
-    .clock{
-        display: none;
-    }
-    .greeting{
-        display: none;
-    }
-    .login{
-        display: none;
-    }
-
-
-
-}
 

@@ -1,0 +1,57 @@
+@media (max-width:900px){
+    html{
+        font-size:7px;
+    }  
+    .content{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: 220px 150px 1fr 1fr;
+        
+    }
+
+    .clock{
+        display: none;
+    }
+    .greeting{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+    .mid-content{
+        display: flex;
+        align-items: center;
+    }
+
+    .side-content{
+        display: flex;
+        justify-content: center;
+    }
+    .todo-list{
+        position: relative;
+        margin:0px;
+        height: 40rem;
+        width: 50rem;
+        top:0%;
+        right:0%;
+    }
+    #todo-form input{
+        height: 5rem;
+        width: 50rem;
+        font-size: 2.5rem;
+        color:whitesmoke;
+        font-weight: 500;
+    }
+    #todo-form input::placeholder{
+        text-align: center;
+    }
+    #todo-list{
+        font-size: 2.2rem;
+    }
+
+
+
+}
