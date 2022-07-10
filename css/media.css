@@ -33,8 +33,20 @@
 }
 
 @media (max-width:900px){
-    #weather iframe{
-        width:240px;
+    html{
+        font-size:8px;
+    }  
+    .clock{
+        display: none;
     }
-    
+    .greeting{
+        display: none;
+    }
+    .login{
+        display: none;
+    }
+
+
+
 }
+
