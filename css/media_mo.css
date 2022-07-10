@@ -9,7 +9,6 @@
         z-index: 2;
         display: grid;
         grid-template-rows: 220px 150px 1fr 1fr;
-        
     }
 
     .clock{
