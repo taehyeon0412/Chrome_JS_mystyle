@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,83 +11,81 @@
     <!--screen 너비에 따른 media css 따로 적용하기-->
     <title>My Chrome</title>
 </head>
+
 <body>
     <div class="bg">
         <div class="content">
 
-        <div class="up-content">
+            <div class="up-content">
 
-            
 
-        </div>
-        <!--상단 컨텐츠-->
 
-        <div class="mid-content">
+            </div>
+            <!--상단 컨텐츠-->
 
-            <div class="clock">
-                <h2 id="clock_text">00:00:00</h2>
+            <div class="mid-content">
+
+                <div class="clock">
+                    <h2 id="clock_text">00:00:00</h2>
+                </div>
+
+                <div class="login hidden">
+                    <form id="login-form">
+                        <input required type="text" placeholder="이름을 입력하세요" maxlength="10" />
+                        <!--required 사용자가 input에 필수로 적어야됨 -->
+                        <button>로그인</button>
+                    </form>
+                </div>
+
+                <div class="greeting">
+                    <span id="greeting" class="hidden"></span>
+                    <button id="logout-btn" class="hidden">로그아웃</button>
+                </div>
+
+                <div class="search">
+                    <form class="search-form" action="https://www.google.com/search" method="GET">
+                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        <input name="q" type="text" placeholder="Google 검색 또는 URL 입력" />
+                    </form>
+                </div>
+                <!--검색바 만들기 보고 블로그하기-->
+
+            </div>
+            <!--중단 컨텐츠-->
+            <div class="side-content">
+                <div class="todo-list">
+                    <form id="todo-form">
+                        <input required type="text" placeholder="오늘 할 일을 적어주세요" />
+                    </form>
+
+                    <ul id="todo-list"></ul>
+                </div>
+            </div>
+            <!--사이드 컨텐츠-->
+
+            <div class="bot-content">
+                <!--하단 컨텐츠-->
+
+                <div id="quote">
+                    <span class="qoutes"></span>
+                    <span class="author"></span>
+                </div>
+
+
             </div>
 
-            <div class="login hidden">
-                <form id = "login-form">
-                    <input required 
-                    type="text" 
-                    placeholder="이름을 입력하세요"
-                    maxlength="10"/>
-                    <!--required 사용자가 input에 필수로 적어야됨 -->
-                    <button>로그인</button>
-                </form>
-            </div>
-
-            <div class="greeting">
-                <span id="greeting" class="hidden"></span>
-                <button id="logout-btn" class="hidden">로그아웃</button>
-            </div>
-
-            <div class="search">
-                <form class="search-form" action="https://www.google.com/search" method="GET">
-                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                    <input name="q" type="text"
-                           placeholder="Google 검색 또는 URL 입력"/>
-                </form>
-            </div>
-            <!--검색바 만들기 보고 블로그하기-->
-
-        </div>
-        <!--중단 컨텐츠-->
-        <div class="side-content">
-            <div class="todo-list">
-                <form id="todo-form">
-                    <input required 
-                        type="text" placeholder="오늘 할 일을 적어주세요"/>
-                </form>
-
-                <ul id="todo-list"></ul>
-            </div>
-        </div>
-        <!--사이드 컨텐츠-->
-    
-        <div class="bot-content">
-         <!--하단 컨텐츠-->
-
-            <div id ="quote">
-                <span class="qoutes"></span>
-                <span class="author"></span>
-            </div>
-
-            
-        </div>
-
-        <div id="weather">
-            <iframe width="100%" height="245" src="https://forecast.io/embed/#lat=37.483782&lon=126.9003409&name=서울&color=#ffc261&font=arial&units=si" frameborder="0"></iframe>
-            <!--
+            <div id="weather">
+                <iframe width="100%" height="245"
+                    src="https://forecast.io/embed/#lat=37.483782&lon=126.9003409&name=서울&color=#ffc261&font=arial&units=si"
+                    frameborder="0"></iframe>
+                <!--
                 latitude: 37.483782
                 longitude: 126.9003409-->
+            </div>
+
+
         </div>
-    
-        
     </div>
-</div>
 
     <script src="js/login.JS"></script>
     <script src="js/clock.js"></script>
@@ -97,6 +96,7 @@
     <script src="js/search.js"></script>
     <script src="https://kit.fontawesome.com/68b2fe6ae2.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
 
 
