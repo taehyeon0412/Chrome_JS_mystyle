@@ -9,7 +9,7 @@ let으로 업데이트를 가능하게 해놓는다*/
 
 const TODOS_KEY = "toDos";
 
-function saveToDos_ft() {
+function fnSaveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   //로컬스토리지에는 배열이 저장이 안됨
 }
@@ -19,7 +19,7 @@ function deleteToDo(deleteToDo) {
   const li = deleteToDo.target.parentElement;
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-  saveToDos_ft();
+  fnSaveToDos();
   //saveToDos_ft를 사용하여 변경된 toDos값을 다시 저장해준다
 }
 
@@ -47,7 +47,7 @@ function ToDoSubmit(submitEvent) {
     각각의 값을 오브젝트로 만들어 localStorage에 저장을한다*/
   toDos.push(newTodoOBJ);
   createToDo(newTodoOBJ);
-  saveToDos_ft();
+  fnSaveToDos();
 }
 
 todoForm.addEventListener("submit", ToDoSubmit);
