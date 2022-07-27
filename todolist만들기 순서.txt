@@ -1,0 +1,80 @@
+초기변수로 줄것 :
+1. form
+2. form-input
+3. ul
+
+1.업데이트 가능한 배열을 만들기 (let)
+사용자가 input에 넣은 값들을 배열로 저장
+
+2. 사용자가 input에 값을 넣고 submit하면 
+새로고침금지, input값을 변수에 넣고 input 초기화 후
+변수에 text와 랜덤id를 준다 (id주는이유 나중에 삭제를 할때 위치를 알게 하기위해서)
+그후 let배열에 push 해준다 
+(submitToDo함수)
+
+3. let배열에 들어온것을 로컬 스토리지에 넣어준다
+로컬스토리지는 배열을 넣을수 없으니 JSON.stringify(변수)를 이용하여 
+string 바꿔서 넣어준다 
+넣어줘야되는것: key,내용 
+key는 자주 사용하니 변수로 만들어준다
+
+//localStorage에 key:toDos value:toDos 을 저장하는함수
+  //JSON.stringify() = 오브젝트,배열등등 모든 JS코드를 string으로 바꿔준다.
+  //JSON.parse() = string을 오브젝트,배열등등으로 바꿔준다.
+
+(saveToDo함수)
+
+4.li를 createElement를 이용해서 만든다
+li.id에 2번에서 만든 변수의 랜덤 id를 넣어준다
+(나중에 삭제하는 함수를 만들때 위치를 찾을수 있게 id값을 넣어줌)
+span을 만들고 innerText에 2번변수의 text값을 넣어준다
+button을 만든다
+button을 클릭하면 생기는 이벤트는 나중에 만들어줌
+span과 button을 li의 자식노드로 추가한다
+초기변수로 준 ul에 li를 자식노드로 추가한다
+(createToDo함수)
+
+5. (submitToDo함수)에 (saveToDo함수)(createToDo함수)를 추가한다
+
+6.submit실행문을 만들고
+로컬스토리지에 있는 key값을 불러오는 변수를 만든다
+const 변수 = localStorage.getItem(변수)
+if문을 만들고 로컬스토리지에 값이 있다면 그것을 불러와서 화면에 나타내주는함수를 만든다
+이렇게 하면 새로고침 후 새로운 값을 넣어도 기존값이 덮어씌워지는게 아닌 이전에 있던 데이터를
+보존할수 있다
+로컬스토리지에 넣을때 JSON.stringify를 이용해서 string값으로 넣었기 때문에
+불러올때는 JSON.parse(변수)로 다시 배열로 바꿔서 들고와준다
+
+여기까지 하면 투두리스트 생성+새로고침시 로컬스토리지에 저장된 값 불러오기 완성
+
+7. 버튼을 누르면 삭제기능 만들기
+(createToDo함수)에 button 실행문을 추가해준다
+
+console.log(매개변수)를 하면 그 안에 요소들이 보이는데 여기서 클릭 이벤트가 발생한 li를 찾아준다
+버튼(자식노드)을 누르면 target 메소드를 이용해서 event가 발생한 버튼의 li(부모노드)를 찾아준다
+
+li.remove()로 삭제
+
+로컬스토리지에 있는 값 = 배열에 들어있는 값과 비교 후 없애준다
+filter 메소드를 이용 
+arr.filter((변수) => 변수.id !== parseInt(li.id));
+filter로 걸러진 배열값을 다시 (saveToDo함수)를 호출해 저장해준다
+(deleteToDoList함수)
+
+/* Filter 메소드는 반드시 true만 리턴한다
+Filter는 for문과 마찬가지로 반복적인 기능을 수행할 때 사용함
+
+ex) const arr = [1,2,3,4,5,6,10,11,12];
+    function filterMan(item){return item < 9};
+    arr.filter(filterMan);
+    ==> [1, 2, 3, 4, 5, 6]
+  간략하게 화살표 함수를 쓰면
+  arr.filter(item => item < 9);
+  화살표함수에는 return을 쓰지않아도 자동으로 된다
+*/
+
+
+완성
+
+
+
